@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+
+{% block title %} Contact {% endblock title %}
+
+{% block body %}
+
+<form method="POST" action="/contact">
+{% csrf_token %}
+
+    <div class="col-md-4">
+      <label for="name" class="form-label"> name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">lname</label>
+      <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter your last name">
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustomUsername" class="form-label">email</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend">@</span>
+        <input type="text" class="form-control" id="email"  name="email" aria-describedby="inputGroupPrepend" required placeholder="Enter your email-id">
+        <div class="invalid-feedback">
+          Please choose a username.
+        </div>
+      </div>
+    </div>
+    <br>
+    <button class="btn btn-dark" type="submit" >Submit</button>
+  </form>
+{% endblock body %}
